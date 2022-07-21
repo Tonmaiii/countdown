@@ -35,9 +35,14 @@ const callback = () => {
     }
     next = next ?? times[times.length - 1]
     const countdown = next - now
-    label.textContent = `${Math.floor(countdown / 60000)}:${`${
-        Math.floor(countdown / 1000) % 60
-    }`.padStart(2, '0')}`
+    const seconds = Math.floor(countdown / 1000) + 1
+    if (seconds > 60) {
+        label.textContent = `${Math.floor(seconds / 60)}:${`${
+            seconds % 60
+        }`.padStart(2, '0')}`
+    } else {
+        label.textContent = seconds
+    }
 }
 
 requestAnimationFrame(callback)
