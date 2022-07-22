@@ -1,5 +1,5 @@
 const label = document.querySelector('#label')
-
+let now = 0
 const time = (hour, minute) => (hour * 60 + minute) * 60 * 1000
 
 const times = [
@@ -26,17 +26,19 @@ const offset = 22000
 const callback = () => {
     requestAnimationFrame(callback)
 
-    const now = (Date.now() - offset) % (24 * 60 * 60 * 1000)
+    const now =
+        (Date.now() - offset + 7 * 3600 * 1000 + 1000) % (24 * 60 * 60 * 1000)
     let next
-    for (let i = 1; i < times.length; i++) {
+    for (let i = 0; i < times.length; i++) {
         if (times[i] > now) {
-            next = times[i - 1]
+            next = times[i]
+            break
         }
     }
     next = next ?? times[times.length - 1]
-    const countdown = next - now
-    const seconds = Math.floor(countdown / 1000) + 1
-    if (seconds > 60) {
+    const countdown = next - now - 1
+    const seconds = Math.floor(countdown / 1000)
+    if (seconds >= 60) {
         label.textContent = `${Math.floor(seconds / 60)}:${`${
             seconds % 60
         }`.padStart(2, '0')}`
