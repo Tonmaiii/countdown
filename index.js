@@ -27,7 +27,7 @@ const callback = () => {
     requestAnimationFrame(callback)
 
     const now =
-        (Date.now() - offset + 7 * 3600 * 1000 + 1000) % (24 * 60 * 60 * 1000)
+        (Date.now() - offset + 7 * 3600 * 1000 - 1000) % (24 * 60 * 60 * 1000)
     let next
     for (let i = 0; i < times.length; i++) {
         if (times[i] > now) {
