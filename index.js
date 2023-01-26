@@ -21,7 +21,7 @@ const times = [
     time(18, 00),
     time(24 + 7, 45)
 ]
-const offset = Date.now() * 4.2883 * 10 ** -7 - 689235
+const offset = Date.now() * 4.2883 * 10 ** -7 - 690000
 
 const callback = () => {
     requestAnimationFrame(callback)
