@@ -31,6 +31,10 @@ const callback = () => {
     let next
     for (let i = 0; i < times.length; i++) {
         if (times[i] > now) {
+            if (i === times.length - 1) {
+                label.textContent = 'The End'
+                return
+            }
             next = times[i]
             break
         }
