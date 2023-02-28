@@ -18,4 +18,5 @@ body {
 
 h1 {
     font-size: 50vh;
+    white-space: nowrap;
 }
