@@ -1,7 +1,7 @@
 import { times } from './util'
 
 export const cuds = {
-    offset: (t: number) => t * 4.2883 * 10 ** -7 - 688500,
+    offset: (t: number) => t * 4.2883e-7 - 688500,
     timezone: 7,
     times: times([
         '7:45',
