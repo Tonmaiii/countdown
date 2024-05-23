@@ -10,7 +10,7 @@
     else {
         const update = () => {
             requestAnimationFrame(update)
-            s = display(times[school])
+            s = display(times[school](Date.now()))
         }
         requestAnimationFrame(update)
     }

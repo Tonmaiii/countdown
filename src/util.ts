@@ -3,19 +3,7 @@ const minute = 60 * second
 const hour = 60 * minute
 const day = 24 * hour
 
-export const display = ({
-    times,
-    offset,
-    timezone
-}: {
-    times: number[]
-    offset: (t: number) => number
-    timezone: number
-}) => {
-    const t = Date.now()
-    const now = (t - offset(t) + timezone * hour - second) % day
-    const next = times.find((time: number) => time > now) ?? times[0] + day
-    const countdown = next - now
+export const display = (countdown: number) => {
     const seconds = Math.floor(countdown / 1000)
     if (seconds < 60) return `${seconds}`
     return `${Math.floor(seconds / 60)}:${`${seconds % 60}`.padStart(2, '0')}`
