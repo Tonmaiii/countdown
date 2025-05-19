@@ -33,26 +33,10 @@ export const cuds = (t: number) => {
 }
 
 export const mwit = (t: number) => {
-    const weekDay = new Date().getDay()
     const timezone = 7
 
     const timesList =
-        weekDay === 1 || weekDay === 2
-            ? times([
-                  '8:30',
-                  '9:00',
-                  '10:20',
-                  '10:30',
-                  '11:50',
-                  '12:50',
-                  '14:10',
-                  '14:20',
-                  '15:40',
-                  '15:50',
-                  '17:10',
-                  '22:00'
-              ])
-            : times([
+            times([
                   '8:00',
                   '8:30',
                   '9:50',
