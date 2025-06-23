@@ -48,6 +48,8 @@ export const mwit = (t: number) => {
                   '15:10',
                   '15:20',
                   '16:40',
+                  '17:30',
+                  '19:30',
                   '22:00'
               ])
     const now = (t + timezone * hour - second) % day
